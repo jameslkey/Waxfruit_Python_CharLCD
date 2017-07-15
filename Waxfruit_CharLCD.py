@@ -70,7 +70,7 @@ LCD_1LINE = 0x00
 LCD_5x10DOTS = 0x04
 LCD_5x8DOTS = 0x00
 
-# Offset for up to 4 rows.
+# Offset for up to 4 _rows.
 LCD_ROW_OFFSETS = (0x00, 0x40, 0x14, 0x54)
 
 # Char Lcd plate GPIO numbers.
@@ -105,7 +105,7 @@ class Adafruit_CharLCD(object):
         """Initialize the Lcd.  RS, EN, and D4...D7 parameters should be the pins
         connected to the Lcd RS, clock enable, and data line 4 through 7 connections.
         The Lcd will be used in its 4-bit mode so these 6 lines are the only ones
-        required to use the Lcd.  You must also pass in the number of columns and
+        required to use the Lcd.  You must also pass in the number of _columns and
         lines on the Lcd.  
         If you would like to control the backlight, pass in the pin connected to
         the backlight with the backlight parameter.  The invert_polarity boolean
@@ -253,7 +253,7 @@ class Adafruit_CharLCD(object):
         The location parameter should be between 0 and 7 and pattern should
         provide an array of 8 bytes containing the pattern. E.g. you can easyly
         design your custom character at http://www.quinapalus.com/hd44780udg.html
-        To show your custom character use eg. lcd.message('\x01')
+        To show your custom character use eg. lcd._message('\x01')
         """
         # only position 0..7 are allowed
         location &= 0x7
@@ -290,7 +290,7 @@ class Adafruit_RGBCharLCD(Adafruit_CharLCD):
         should be the pins connected to the Lcd RS, clock enable, and data line 
         4 through 7 connections. The Lcd will be used in its 4-bit mode so these 
         6 lines are the only ones required to use the Lcd.  You must also pass in
-        the number of columns and lines on the Lcd.
+        the number of _columns and lines on the Lcd.
         The red, green, and blue parameters define the pins which are connected
         to the appropriate backlight LEDs.  The invert_polarity parameter is a
         boolean that controls if the LEDs are on with a LOW or HIGH signal.  By
@@ -350,7 +350,7 @@ class Adafruit_CharLCDPlate(Adafruit_RGBCharLCD):
     def __init__(self, address=0x20, busnum='', cols=16, lines=2):
         """Initialize the character Lcd plate.  Can optionally specify a separate
         I2C address or bus number, but the defaults should suffice for most needs.
-        Can also optionally specify the number of columns and lines on the Lcd
+        Can also optionally specify the number of _columns and lines on the Lcd
         (default is 16x2).
         """
         # Configure MCP23017 device.
