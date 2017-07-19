@@ -253,7 +253,7 @@ class Adafruit_CharLCD(object):
         The location parameter should be between 0 and 7 and pattern should
         provide an array of 8 bytes containing the pattern. E.g. you can easyly
         design your custom character at http://www.quinapalus.com/hd44780udg.html
-        To show your custom character use eg. lcd._message('\x01')
+        To show your custom character use eg. lcd.message('\x01')
         """
         # only position 0..7 are allowed
         location &= 0x7
